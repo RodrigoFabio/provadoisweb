@@ -13,7 +13,7 @@
             $_POST['anoPublicacao'],
             $_POST['editora'],
             $_POST['genero'],
-            $novaDataCadastro,  // Use $novaDataCadastro aqui
+            $novaDataCadastro, 
             $_POST['disponivel']
         );
     }

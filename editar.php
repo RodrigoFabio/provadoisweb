@@ -11,7 +11,7 @@ if (isset($_SESSION["usuario"])) {
         $id = $_POST['id'];
           
         $livro = $livroRepository->BuscaLivroById(intval($id));
-        var_dump($livro['DataCadastro']);
+
     }
     
 
@@ -19,7 +19,7 @@ if (isset($_SESSION["usuario"])) {
         $LivroID = intval($_POST['LivroID']); // Converta para inteiro
         $novaDataCadastro = new DateTime($_POST['DataCadastro']);
         $livroRepository->editarLivro(
-            $LivroID, // Agora é um inteiro
+            $LivroID, 
             $_POST['titulo'],
             $_POST['autor'],
             $_POST['anoPublicacao'],

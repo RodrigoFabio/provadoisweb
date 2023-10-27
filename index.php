@@ -39,13 +39,14 @@ try {
         </thead>
         <tbody>
     <?php foreach ($livros as $livro): ?>
+        <!-- percorre o array de livros e exibe um por um-->
         <tr>
             <td><p><?= $livro['Titulo'] ?></p></td>
             <td><p><?= $livro['Autor'] ?></p></td>
             <td><p><?= $livro['Editora'] ?></p></td>
             <td><p><?= $livro['AnoPublicacao'] ?></p></td>
             <td>
-
+            
             <form action="detalhes.php" method="post">
                     <input type="hidden" name="id" value="<?= $livro['LivroID']?>">
                     <input type="submit" class="botao-editar" value="Detalhes">
