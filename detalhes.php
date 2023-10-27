@@ -9,14 +9,15 @@ $livro = $livroRepository->BuscaLivroById($_POST['id']);
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/detalhes_screen.css">
     <title>Detalhes do Livro</title>
 </head>
 <body>
-    <h1>Detalhes do Livro</h1>
+    <div class="container">
+    <h1 id="titulo" >Detalhes do Livro</h1>
     
-    <a href="index.php">Voltar</a>
     <?php if ($livro) : ?>
-        <table border="1">
+        <table class="list" border="1">
             <tr>
                 <th>LivroID</th>
                 <td><?= $livro["LivroID"] ?></td>
@@ -53,5 +54,9 @@ $livro = $livroRepository->BuscaLivroById($_POST['id']);
     <?php else : ?>
         <p>O livro não foi encontrado.</p>
     <?php endif; ?>
+
+   <br> <a class="button" href="index.php">Voltar</a>
+
+    </div>
 </body>
 </html>

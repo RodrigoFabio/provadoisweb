@@ -33,7 +33,7 @@ class LivroRepository {
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
         } else {
-            return null; // ou qualquer outro valor padrão que você queira retornar quando o livro não for encontrado
+            return null; 
         }
     }
     
@@ -55,11 +55,11 @@ class LivroRepository {
         $sql = "INSERT INTO livro (Titulo, Autor, AnoPublicacao, Editora, GeneroId, DataCadastro, Disponivel) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $statement = $this->mysqli->prepare($sql);
     
-        // Defina os tipos de dados e ligue as variáveis
-        $dataCadastroFormat = $dataCadastro->format('Y-m-d'); // Formate a data antes de passá-la
+    
+        $dataCadastroFormat = $dataCadastro->format('Y-m-d'); 
         $statement->bind_param('ssissis', $titulo, $autor, $anoPublicacao, $editora, $genero, $dataCadastroFormat, $disponivel);
     
-        // Execute a instrução
+      
         $statement->execute();
     }
     
